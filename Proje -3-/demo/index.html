@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="tr" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Proje -3-</title>
+	<!--Utku Çevik-->
+	<link rel="stylesheet" href="../src/colorPick.css">
+	<style>
+#picker1 {
+	width: 350px;
+	height: 350px;
+	cursor: pointer;
+	-webkit-transition: all linear .2s;
+	-moz-transition: all linear .2s;
+	-ms-transition: all linear .2s;
+	-o-transition: all linear .2s;
+	transition: all linear .2s;
+	border: thin solid #eee;
+	margin: 15px;
+	float: left;
+}
+#picker1:hover {
+	transform: scale(1.1);
+}
+#picker2 {
+	border-radius: 50%;
+	width: 350px;
+	height: 350px;
+	cursor: pointer;
+	-webkit-transition: all linear .2s;
+	-moz-transition: all linear .2s;
+	-ms-transition: all linear .2s;
+	-o-transition: all linear .2s;
+	transition: all linear .2s;
+	border: thin solid #eee;
+	margin: 15px;
+	margin-left: 500px;
+}
+#picker2:hover {
+	transform: scale(1.1);
+}
+	</style>
+</head>
+<body>
+	<div class="picker" id="picker1"></div>
+    <div class="picker" id="picker2"></div>
+	<span id="color1"></span>
+	<span id="color2"></span>
+
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="../src/colorPick.js"></script>
+	<script>
+		$("#picker1").colorPick({
+			'initialColor' : '#8e44ad',
+			'palette': ["#FF0000","#FF9000","#008000","#005000","#0000FF","#FFFFFF", "#FFFFF0", "#000000", "#808080","#C1C1C1","#C0C0C0", "#FFFF00","#FFC111","#800080","#FFA500", "#800000", "#FF00FF", "#00FF00", "#00FFFF", "#008080", "#808000","#000080","#C00A00","#00BB00","#D1D1D1","#E0E1E0","#FFCBDB","#E68FAC","#30D5C8","#660099"],
+			'onColorSelected': function() {
+				color1.innerText = this.color;
+				this.element.css({'backgroundColor': this.color, 'color': this.color});
+			}
+		});
+
+        $("#picker2").colorPick({
+			'initialColor' : '#34495e',
+			'palette': ["#FF0000","#FF9000","#008000","#005000","#0000FF","#FFFFFF", "#FFFFF0", "#000000", "#808080","#C1C1C1","#C0C0C0", "#FFFF00","#FFC111","#800080","#FFA500", "#800000", "#FF00FF", "#00FF00", "#00FFFF", "#008080", "#808000","#000080","#C00A00","#00BB00","#D1D1D1","#E0E1E0","#FFCBDB","#E68FAC","#30D5C8","#660099"],
+			'onColorSelected': function() {
+				color2.innerText = this.color;
+				this.element.css({'backgroundColor': this.color, 'color': this.color});
+			}
+		});
+	</script>
+</body>
+</html>

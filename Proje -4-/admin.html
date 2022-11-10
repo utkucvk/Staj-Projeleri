@@ -1,0 +1,57 @@
+<html>
+<!-- BÜTÜN ARAŞTIRMALARIMA RAĞMEN PROJEYİ İLERLETECEK BİR KAYNAĞA ULAŞAMADIM. BU SEBEBLE EKSİK GÖNDERİYORUM. -->
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="jconfirmaction.jquery.js"></script>
+<link rel="stylesheet" href="./admin.css">
+
+<button class="button">HABERLERİ GÖSTER</button>   
+
+</head>
+<body>
+
+<table class="table" id="data"></table>
+
+<script>
+
+    <!--function myFunction() { if (confirm("Satır Silenecek. Emin Misiniz?") == true) { } else {   }-->
+
+        function satirisil(o) {
+        var p=o.parentNode.parentNode;
+        p.parentNode.removeChild(p);
+        }
+
+    </script>
+
+<script class=".tr"> 
+
+$("button").click(function() {
+$(document).ready(function(){
+    $.ajax({
+        type: "GET",
+        url: "https://www.milliyet.com.tr/rss/rssnew/gundemrss.xml", 
+        dataType: "xml",
+        success: function(xml) {
+
+            $(xml).find('item').each(function(){    
+                var Col0 = $(this).find('title').text();
+                var Col1 = $(this).find('description').text();
+                var col2 = $(this).find('image').text
+
+                $('<tr style="background-color: lightblue; border-style:solid; border:2px;"></tr>').html('<tr><tr><td style="background-color: azure; border:2px; border-style: solid;">'+
+                Col0+'<input id ="btnsil" type="button" float="right" value="Satır Sil" onclick="satirisil(this)"></td></tr><tr><td>'+
+                Col1+'<input type="button" value="Satır Sil" onclick="satirisil(this)"></td></tr></tr>')
+                .appendTo('#data');
+
+                });
+            }
+        });
+    });
+}); 
+
+</script>
+
+
+</body>
+</html>

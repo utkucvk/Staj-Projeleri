@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yöetici Girişi | Proje -4-</title>
+    <link rel="stylesheet" href="./indexstyle.css">
+</head>
+<body>
+    <center class="form-ekrani">
+        <h2>Yönetim Paneli</h2>
+        <form action="admin.html" name="Admin">
+            <label id="kullanici-label" for="kullaniciAdi">Kullanıcı Adı</label>
+            <input id="kullanici-adi" type="text" name="kullaniciAdi"/>
+            <label id="sifre-label" for="sifre">Şifre</label>
+            <input id="sifre" type="password" name="sifre"/>
+            <input id="btn" type="submit" value="Giriş Yap"/>
+    </form>
+    </center>
+    <script>
+        "use strict";
+        var formAdmin = document.forms["Admin"];
+        var kullaniciAdi = formAdmin.kullaniciAdi;
+        var sifre = formAdmin.sifre;
+
+        formAdmin.onsubmit = function(){
+            if (sifre.value == 123 && kullaniciAdi.value == "admin"){
+                alert("Giriş Yapılıyor...");
+            }
+            else{
+                alert("Girilen bilgiler hatalı veya boş bırakılmış!");
+                return false;
+            }   
+            return true;
+        }
+    </script>
+</body>
+</html>

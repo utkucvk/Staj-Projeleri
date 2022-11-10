@@ -1,0 +1,57 @@
+body{
+    background-color: lightblue;
+}
+.form-ekrani{
+    margin-top: 200px;
+    margin-left: 25%;
+    margin-right: 25%;
+    border: 5px;
+    border-style: solid;
+}
+h2{
+    border: 1px;
+    border-style: none;
+    background-color: beige;
+    font-family: fantasy;
+}
+#kullanici-adi{
+    width: 300px;
+    height: 50px;
+    display: block;
+    margin: 10px;
+    border: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    text-align: center;
+}
+#kullanici-label{
+    font-family: fantasy;
+}
+#sifre{
+    width: 300px;
+    height: 50px;
+    display: block;
+    margin: 10px;
+    border: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    text-align: center;
+}
+#sifre-label{
+    font-family: fantasy;
+}
+#btn{
+    width: 100px;
+    height: 25px;
+    display: block;
+    margin: 15px;
+    margin-left: 200px;
+    background-color: white;
+    height: 50px;
+    width: 100px;
+    font-family: fantasy;
+}
+#btn:hover{
+    background-color: beige;
+    cursor: pointer;
+}
